@@ -1,0 +1,723 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Shell 编程范例 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>布爾運算 | Shell 编程范例</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        <meta name="author" content="Wu Zhangjin &lt;wuzhangjin@gmail.com&gt;">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-google_code_prettify/google-code-prettify.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-maxiang/maxiang.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../zh/chapters/01-chapter4.html" />
+    
+    
+    <link rel="prev" href="../../zh/chapters/01-chapter2.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book" data-level="5" data-basepath="../.." data-revision="Tue Sep 01 2015 15:12:53 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+            
+            <li>
+                <a href="http://www.tinylab.org" target="blank" class="custom-link">泰晓科技</a>
+            </li>
+        
+            
+            <li>
+                <a href="http://weidian.com/?userid=335178200" target="blank" class="custom-link">开源小店</a>
+            </li>
+        
+            
+            <li>
+                <a href="http://www.tinylab.org/project/pleac-shell/" target="blank" class="custom-link">项目首页</a>
+            </li>
+        
+            
+            <li>
+                <a href="http://tinylab.gitbooks.io/elinux" target="blank" class="custom-link">嵌入式 Linux 知识库</a>
+            </li>
+        
+            
+            <li>
+                <a href="http://tinylab.gitbooks.io/linux-doc" target="blank" class="custom-link">Linux 内核文档</a>
+            </li>
+        
+            
+            <li>
+                <a href="http://tinylab.gitbooks.io/cbook" target="blank" class="custom-link">C 语言编程透视</a>
+            </li>
+        
+        
+
+        
+        <li class="divider"></li>
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="zh/preface/01-chapter0.html">
+            
+                
+                    <a href="../../zh/preface/01-chapter0.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        版本修訂歷史
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="zh/preface/01-chapter1.html">
+            
+                
+                    <a href="../../zh/preface/01-chapter1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        簡介
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="zh/chapters/01-chapter1.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        準備工作
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="zh/chapters/01-chapter2.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        數值運算
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5" data-path="zh/chapters/01-chapter3.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter3.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        布爾運算
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="zh/chapters/01-chapter4.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter4.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        字符串操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="zh/chapters/01-chapter5.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter5.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        文件操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="zh/chapters/01-chapter6.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        文件系統操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="zh/chapters/01-chapter7.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter7.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        進程操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="zh/chapters/01-chapter8.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter8.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        網絡操作
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="zh/chapters/01-chapter9.html">
+            
+                
+                    <a href="../../zh/chapters/01-chapter9.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        總結
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="zh/appendix/02-chapter1.html">
+            
+                
+                    <a href="../../zh/appendix/02-chapter1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        附錄
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >Shell 编程范例</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="%E5%B8%83%E7%88%BE%E9%81%8B%E7%AE%97">&#x5E03;&#x723E;&#x904B;&#x7B97;</h1>
+<ul>
+<li><a href="#toc_17877_9500_1">&#x524D;&#x8A00;</a></li>
+<li><a href="#toc_17877_9500_2">&#x5E38;&#x898F;&#x7684;&#x5E03;&#x723E;&#x904B;&#x7B97;</a><ul>
+<li><a href="#toc_17877_9500_3">&#x5728; Shell &#x4E0B;&#x5982;&#x4F55;&#x9032;&#x884C;&#x908F;&#x8F2F;&#x904B;&#x7B97;</a><ul>
+<li><a href="#toc_17877_9500_4">&#x7BC4;&#x4F8B;&#xFF1A;true or false</a></li>
+<li><a href="#toc_17877_9500_5">&#x7BC4;&#x4F8B;&#xFF1A;&#x8207;&#x904B;&#x7B97;</a></li>
+<li><a href="#toc_17877_9500_6">&#x7BC4;&#x4F8B;&#xFF1A;&#x6216;&#x904B;&#x7B97;</a></li>
+<li><a href="#toc_17877_9500_7">&#x7BC4;&#x4F8B;&#xFF1A;&#x975E;&#x904B;&#x7B97;&#xFF0C;&#x5373;&#x53D6;&#x53CD;</a></li>
+</ul>
+</li>
+<li><a href="#toc_17877_9500_8">Bash &#x88E1;&#x982D;&#x7684; true &#x548C; false &#x662F;&#x6211;&#x5011;&#x901A;&#x5E38;&#x8A8D;&#x70BA;&#x7684; 1 &#x548C; 0 &#x9EBC;&#xFF1F;</a><ul>
+<li><a href="#toc_17877_9500_9">&#x7BC4;&#x4F8B;&#xFF1A;&#x8FD4;&#x56DE;&#x503C; v.s. &#x908F;&#x8F2F;&#x503C;</a></li>
+<li><a href="#toc_17877_9500_10">&#x7BC4;&#x4F8B;&#xFF1A;&#x67E5;&#x770B; true &#x548C; false &#x5E6B;&#x52A9;&#x548C;&#x985E;&#x578B;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#toc_17877_9500_11">&#x689D;&#x4EF6;&#x6E2C;&#x8A66;</a><ul>
+<li><a href="#toc_17877_9500_12">&#x689D;&#x4EF6;&#x6E2C;&#x8A66;&#x57FA;&#x672C;&#x4F7F;&#x7528;</a><ul>
+<li><a href="#toc_17877_9500_13">&#x7BC4;&#x4F8B;&#xFF1A;&#x6578;&#x503C;&#x6E2C;&#x8A66;</a></li>
+<li><a href="#toc_17877_9500_14">&#x7BC4;&#x4F8B;&#xFF1A;&#x5B57;&#x7B26;&#x4E32;&#x6E2C;&#x8A66;</a></li>
+<li><a href="#toc_17877_9500_15">&#x7BC4;&#x4F8B;&#xFF1A;&#x6587;&#x4EF6;&#x6E2C;&#x8A66;</a></li>
+</ul>
+</li>
+<li><a href="#toc_17877_9500_16">&#x5404;&#x7A2E;&#x908F;&#x8F2F;&#x6E2C;&#x8A66;&#x7684;&#x7D44;&#x5408;</a><ul>
+<li><a href="#toc_17877_9500_17">&#x7BC4;&#x4F8B;&#xFF1A;&#x5982;&#x679C; a&#xFF0C;b&#xFF0C;c &#x90FD;&#x7B49;&#x65BC;&#x4E0B;&#x9762;&#x5C0D;&#x61C9;&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x9EBC;&#x6253;&#x5370; YES&#xFF0C;&#x901A;&#x904E; -a &#x9032;&#x884C;&#x8207;&#x6E2C;&#x8A66;</a></li>
+<li><a href="#toc_17877_9500_18">&#x7BC4;&#x4F8B;&#xFF1A;&#x6E2C;&#x8A66;&#x67D0;&#x500B;&#x201C;&#x6771;&#x897F;&#x201D;&#x662F;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x9304;&#xFF0C;&#x901A;&#x904E; -o &#x9032;&#x884C;&#x201C;&#x6216;&#x201D;&#x904B;&#x7B97;</a></li>
+<li><a href="#toc_17877_9500_19">&#x7BC4;&#x4F8B;&#xFF1A;&#x6E2C;&#x8A66;&#x67D0;&#x500B;&#x201C;&#x6771;&#x897F;&#x201D;&#x662F;&#x5426;&#x70BA;&#x6587;&#x4EF6;&#xFF0C;&#x6E2C;&#x8A66; <code>!</code> &#x975E;&#x904B;&#x7B97;</a></li>
+</ul>
+</li>
+<li><a href="#toc_17877_9500_20">&#x6BD4;&#x8F03; -a &#x8207; &amp;&amp;, -o &#x8207; ||&#xFF0C; ! test &#x8207; test !</a><ul>
+<li><a href="#toc_17877_9500_21">&#x7BC4;&#x4F8B;&#xFF1A;&#x8981;&#x6C42;&#x67D0;&#x6587;&#x4EF6;&#x53EF;&#x57F7;&#x884C;&#x4E14;&#x6709;&#x5167;&#x5BB9;&#xFF0C;&#x7528; -a &#x548C; &amp;&amp; &#x5206;&#x5225;&#x5BE6;&#x73FE;</a></li>
+<li><a href="#toc_17877_9500_22">&#x7BC4;&#x4F8B;&#xFF1A;&#x8981;&#x6C42;&#x67D0;&#x500B;&#x5B57;&#x7B26;&#x4E32;&#x8981;&#x9EBC;&#x70BA;&#x7A7A;&#xFF0C;&#x8981;&#x9EBC;&#x548C;&#x67D0;&#x500B;&#x5B57;&#x7B26;&#x4E32;&#x76F8;&#x7B49;</a></li>
+<li><a href="#toc_17877_9500_23">&#x7BC4;&#x4F8B;&#xFF1A;&#x6E2C;&#x8A66;&#x67D0;&#x500B;&#x6578;&#x5B57;&#x4E0D;&#x6EFF;&#x8DB3;&#x6307;&#x5B9A;&#x7684;&#x6240;&#x6709;&#x689D;&#x4EF6;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#toc_17877_9500_24">&#x547D;&#x4EE4;&#x5217;&#x8868;</a><ul>
+<li><a href="#toc_17877_9500_25">&#x547D;&#x4EE4;&#x5217;&#x8868;&#x7684;&#x57F7;&#x884C;&#x898F;&#x5F8B;</a><ul>
+<li><a href="#toc_17877_9500_26">&#x7BC4;&#x4F8B;&#xFF1A;&#x5982;&#x679C; ping &#x901A; www.lzu.edu.cn&#xFF0C;&#x90A3;&#x9EBC;&#x6253;&#x5370;&#x9023;&#x901A;&#x4FE1;&#x606F;</a></li>
+</ul>
+</li>
+<li><a href="#toc_17877_9500_27">&#x547D;&#x4EE4;&#x5217;&#x8868;&#x7684;&#x4F5C;&#x7528;</a><ul>
+<li><a href="#toc_17877_9500_28">&#x7BC4;&#x4F8B;&#xFF1A;&#x5728;&#x8173;&#x672C;&#x91CC;&#x5224;&#x65B7;&#x7A0B;&#x5E8F;&#x7684;&#x53C3;&#x6578;&#x500B;&#x6578;&#xFF0C;&#x548C;&#x53C3;&#x6578;&#x985E;&#x578B;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#toc_17877_9500_29">&#x5C0F;&#x7D50;</a></li>
+</ul>
+<p><span id="toc_17877_9500_1"></span></p>
+<h2 id="%E5%89%8D%E8%A8%80">&#x524D;&#x8A00;</h2>
+<p>&#x4E0A;&#x500B;&#x79AE;&#x62DC;&#x4ECB;&#x7D39;&#x4E86;<a href="01-chapter2.html">Shell&#x7DE8;&#x7A0B;&#x7BC4;&#x4F8B;&#x4E4B;&#x6578;&#x503C;&#x904B;&#x7B97;</a>&#xFF0C;&#x5C0D; Shell &#x4E0B;&#x57FA;&#x672C;&#x6578;&#x503C;&#x904B;&#x7B97;&#x65B9;&#x6CD5;&#x505A;&#x4E86;&#x7C21;&#x55AE;&#x7684;&#x4ECB;&#x7D39;&#xFF0C;&#x9019;&#x5468;&#x5C07;&#x4E00;&#x8D77;&#x63A2;&#x8A0E;&#x5E03;&#x723E;&#x904B;&#x7B97;&#xFF0C;&#x5373;&#x5982;&#x4F55;&#x64CD;&#x4F5C;&#x201C;&#x771F;&#x5047;&#x503C;&#x201D;&#x3002;</p>
+<p>&#x5728; Bash &#x88E1;&#x6709;&#x9019;&#x6A23;&#x7684;&#x5E38;&#x91CF;(&#x5BE6;&#x969B;&#x4E0A;&#x662F;&#x5169;&#x500B;&#x5167;&#x7F6E;&#x547D;&#x4EE4;&#xFF0C;&#x5728;&#x9019;&#x88E1;&#x6211;&#x5011;&#x59D1;&#x4E14;&#x9019;&#x9EBC;&#x8A8D;&#x70BA;&#xFF0C;&#x5F8C;&#x9762;&#x5C07;&#x4ECB;&#x7D39;)&#xFF0C;&#x5373; true &#x548C; false&#xFF0C;&#x4E00;&#x500B;&#x8868;&#x793A;&#x771F;&#xFF0C;&#x4E00;&#x500B;&#x8868;&#x793A;&#x5047;&#x3002;&#x5C0D;&#x5B83;&#x5011;&#x53EF;&#x4EE5;&#x9032;&#x884C;&#x8207;&#x3001;&#x6216;&#x3001;&#x975E;&#x904B;&#x7B97;&#x7B49;&#x5E38;&#x898F;&#x7684;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#xFF0C;&#x5728;&#x9019;&#x4E00;&#x7BC0;&#xFF0C;&#x6211;&#x5011;&#x9664;&#x4E86;&#x8A0E;&#x8AD6;&#x9019;&#x4E9B;&#x57FA;&#x672C;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x5916;&#xFF0C;&#x9084;&#x5C07;&#x8A0E;&#x8AD6;Shell&#x7DE8;&#x7A0B;&#x4E2D;&#x7684;<strong>&#x689D;&#x4EF6;&#x6E2C;&#x8A66;</strong>&#x548C;<strong>&#x547D;&#x4EE4;&#x5217;&#x8868;</strong>&#xFF0C;&#x4E26;&#x4ECB;&#x7D39;&#x5B83;&#x5011;&#x548C;&#x5E03;&#x723E;&#x904B;&#x7B97;&#x7684;&#x95DC;&#x4FC2;&#x3002;</p>
+<p><span id="toc_17877_9500_2"></span></p>
+<h2 id="%E5%B8%B8%E8%A6%8F%E7%9A%84%E5%B8%83%E7%88%BE%E9%81%8B%E7%AE%97">&#x5E38;&#x898F;&#x7684;&#x5E03;&#x723E;&#x904B;&#x7B97;</h2>
+<p>&#x9019;&#x88E1;&#x4E3B;&#x8981;&#x4ECB;&#x7D39; <code>Bash</code> &#x88E1;&#x982D;&#x5E38;&#x898F;&#x7684;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#xFF0C;&#x8207;&#x3001;&#x6216;&#x3001;&#x975E;&#x3002;</p>
+<p><span id="toc_17877_9500_3"></span></p>
+<h3 id="%E5%9C%A8-shell-%E4%B8%8B%E5%A6%82%E4%BD%95%E9%80%B2%E8%A1%8C%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97">&#x5728; Shell &#x4E0B;&#x5982;&#x4F55;&#x9032;&#x884C;&#x908F;&#x8F2F;&#x904B;&#x7B97;</h3>
+<p><span id="toc_17877_9500_4"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9Atrue-or-false">&#x7BC4;&#x4F8B;&#xFF1A;true or false</h4>
+<p>&#x55AE;&#x7368;&#x6E2C;&#x8A66; <code>true</code> &#x548C; <code>false</code>&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x51FA; <code>true</code> &#x662F;&#x771F;&#x503C;&#xFF0C;<code>false</code> &#x70BA;&#x5047;</p>
+<pre><code>$ if true;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if false;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p><span id="toc_17877_9500_5"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E8%88%87%E9%81%8B%E7%AE%97">&#x7BC4;&#x4F8B;&#xFF1A;&#x8207;&#x904B;&#x7B97;</h4>
+<pre><code>$ if true &amp;&amp; true;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if true &amp;&amp; false;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+$ if false &amp;&amp; false;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+$ if false &amp;&amp; true;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p><span id="toc_17877_9500_6"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E6%88%96%E9%81%8B%E7%AE%97">&#x7BC4;&#x4F8B;&#xFF1A;&#x6216;&#x904B;&#x7B97;</h4>
+<pre><code>$ if true || true;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if true || false;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if false || true;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if false || false;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p><span id="toc_17877_9500_7"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E9%9D%9E%E9%81%8B%E7%AE%97%EF%BC%8C%E5%8D%B3%E5%8F%96%E5%8F%8D">&#x7BC4;&#x4F8B;&#xFF1A;&#x975E;&#x904B;&#x7B97;&#xFF0C;&#x5373;&#x53D6;&#x53CD;</h4>
+<pre><code>$ if ! false;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if ! true;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x51FA; <code>true</code> &#x548C; <code>false</code> &#x6309;&#x7167;&#x6211;&#x5011;&#x5C0D;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x7684;&#x7406;&#x89E3;&#x9032;&#x884C;&#x8457;&#xFF0C;&#x4F46;&#x662F;&#x70BA;&#x4E86;&#x80FD;&#x5920;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3; Shell &#x5C0D;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x7684;&#x5BE6;&#x73FE;&#xFF0C;&#x6211;&#x5011;&#x9084;&#x5F97;&#x5F04;&#x6E05;&#x695A;&#xFF0C;<code>true</code> &#x548C; <code>false</code> &#x662F;&#x600E;&#x9EBC;&#x5DE5;&#x4F5C;&#x7684;&#xFF1F;</p>
+<p><span id="toc_17877_9500_8"></span></p>
+<h3 id="bash-%E8%A3%A1%E9%A0%AD%E7%9A%84-true-%E5%92%8C-false-%E6%98%AF%E6%88%91%E5%80%91%E9%80%9A%E5%B8%B8%E8%AA%8D%E7%82%BA%E7%9A%84-1-%E5%92%8C-0-%E9%BA%BC%EF%BC%9F">Bash &#x88E1;&#x982D;&#x7684; true &#x548C; false &#x662F;&#x6211;&#x5011;&#x901A;&#x5E38;&#x8A8D;&#x70BA;&#x7684; 1 &#x548C; 0 &#x9EBC;&#xFF1F;</h3>
+<p>&#x56DE;&#x7B54;&#x662F;&#xFF1A;&#x5426;&#x3002;</p>
+<p><span id="toc_17877_9500_9"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E8%BF%94%E5%9B%9E%E5%80%BC-v-s-%E9%82%8F%E8%BC%AF%E5%80%BC">&#x7BC4;&#x4F8B;&#xFF1A;&#x8FD4;&#x56DE;&#x503C; v.s. &#x908F;&#x8F2F;&#x503C;</h4>
+<p><code>true</code> &#x548C; <code>false</code> &#x5B83;&#x5011;&#x672C;&#x8EAB;&#x4E26;&#x975E;&#x908F;&#x8F2F;&#x503C;&#xFF0C;&#x5B83;&#x5011;&#x90FD;&#x662F; Shell &#x7684;&#x5167;&#x7F6E;&#x547D;&#x4EE4;&#xFF0C;&#x53EA;&#x662F;&#x5B83;&#x5011;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x500B;&#x201C;&#x908F;&#x8F2F;&#x503C;&#x201D;&#xFF1A;</p>
+<pre><code>$ true
+$ echo $?
+0
+$ false
+$ echo $?
+1
+</code></pre><p>&#x53EF;&#x4EE5;&#x770B;&#x5230; <code>true</code> &#x8FD4;&#x56DE;&#x4E86; 0&#xFF0C;&#x800C; <code>false</code> &#x5247;&#x8FD4;&#x56DE;&#x4E86; 1 &#x3002;&#x8DDF;&#x6211;&#x5011;&#x96E2;&#x6563;&#x6578;&#x5B78;&#x88E1;&#x5B78;&#x7684;&#x771F;&#x503C; 1 &#x548C; 0 &#x4E26;&#x4E0D;&#x662F;&#x5C0D;&#x61C9;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x76F8;&#x53CD;&#x7684;&#x3002;</p>
+<p><span id="toc_17877_9500_10"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E6%9F%A5%E7%9C%8B-true-%E5%92%8C-false-%E5%B9%AB%E5%8A%A9%E5%92%8C%E9%A1%9E%E5%9E%8B">&#x7BC4;&#x4F8B;&#xFF1A;&#x67E5;&#x770B; true &#x548C; false &#x5E6B;&#x52A9;&#x548C;&#x985E;&#x578B;</h4>
+<pre><code>$ help true false
+true: true
+     Return a successful result.
+false: false
+     Return an unsuccessful result.
+$ type true false
+true is a shell builtin
+false is a shell builtin
+</code></pre><p>&#x8AAA;&#x660E;&#xFF1A;<code>$?</code> &#x662F;&#x4E00;&#x500B;&#x7279;&#x6B8A;&#x8B8A;&#x91CF;&#xFF0C;&#x5B58;&#x653E;&#x6709;&#x4E0A;&#x4E00;&#x6B21;&#x9032;&#x7A0B;&#x7684;&#x7D50;&#x675F;&#x72C0;&#x614B;&#xFF08;&#x9000;&#x51FA;&#x72C0;&#x614B;&#x78BC;&#xFF09;&#x3002;</p>
+<p>&#x5F9E;&#x4E0A;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x96E3;&#x806F;&#x60F3;&#x5230;&#x5728; C &#x8A9E;&#x8A00;&#x7A0B;&#x5E8F;&#x8A2D;&#x8A08;&#x4E2D;&#x70BA;&#x4EC0;&#x9EBC;&#x6703;&#x5F37;&#x8ABF;&#x5728; <code>main</code> &#x51FD;&#x6578;&#x524D;&#x9762;&#x52A0;&#x4E0A; <code>int</code>&#xFF0C;&#x4E26;&#x5728;&#x672B;&#x5C3E;&#x52A0;&#x4E0A; <code>return 0</code> &#x3002;&#x56E0;&#x70BA;&#x5728; Shell &#x88E1;&#xFF0C;&#x5C07;&#x628A; 0 &#x4F5C;&#x70BA;&#x7A0B;&#x5E8F;&#x662F;&#x5426;&#x6210;&#x529F;&#x7D50;&#x675F;&#x7684;&#x6A19;&#x8A8C;&#xFF0C;&#x9019;&#x5C31;&#x662F; Shell &#x88E1;&#x982D; <code>true</code> &#x548C; <code>false</code> &#x7684;&#x5BE6;&#x8CEA;&#xFF0C;&#x5B83;&#x5011;&#x7528;&#x4EE5;&#x53CD;&#x61C9;&#x67D0;&#x500B;&#x7A0B;&#x5E8F;&#x662F;&#x5426;&#x6B63;&#x78BA;&#x7D50;&#x675F;&#xFF0C;&#x800C;&#x4E26;&#x975E;&#x50B3;&#x7D71;&#x7684;&#x771F;&#x5047;&#x503C;&#xFF08;1 &#x548C; 0&#xFF09;&#xFF0C;&#x76F8;&#x53CD;&#x5730;&#xFF0C;&#x5B83;&#x5011;&#x8FD4;&#x56DE;&#x7684;&#x662F; 0 &#x548C; 1 &#x3002;&#x4E0D;&#x904E;&#x6176;&#x5E78;&#x5730;&#x662F;&#xFF0C;&#x6211;&#x5011;&#x5728;&#x505A;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x6642;&#xFF0C;&#x7121;&#x9808;&#x95DC;&#x5FC3;&#x9019;&#x4E9B;&#x3002;</p>
+<p><span id="toc_17877_9500_11"></span></p>
+<h2 id="%E6%A2%9D%E4%BB%B6%E6%B8%AC%E8%A9%A6">&#x689D;&#x4EF6;&#x6E2C;&#x8A66;</h2>
+<p>&#x5F9E;&#x4E0A;&#x7BC0;&#x4E2D;&#xFF0C;&#x6211;&#x5011;&#x5DF2;&#x7D93;&#x6E05;&#x695A;&#x5730;&#x77AD;&#x89E3;&#x4E86; Shell &#x4E0B;&#x7684;&#x201C;&#x908F;&#x8F2F;&#x503C;&#x201D;&#x662F;&#x4EC0;&#x9EBC;&#xFF1A;&#x662F;&#x9032;&#x7A0B;&#x9000;&#x51FA;&#x6642;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#xFF0C;&#x5247;&#x70BA;&#x771F;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#xFF0C;&#x5247;&#x70BA;&#x5047;&#x3002;</p>
+<p>&#x800C;&#x689D;&#x4EF6;&#x6E2C;&#x8A66;&#x6B63;&#x597D;&#x4F7F;&#x7528;&#x4E86; <code>test</code> &#x9019;&#x9EBC;&#x4E00;&#x500B;&#x6307;&#x4EE4;&#xFF0C;&#x5B83;&#x7528;&#x4F86;&#x9032;&#x884C;&#x6578;&#x503C;&#x6E2C;&#x8A66;&#xFF08;&#x5404;&#x7A2E;&#x6578;&#x503C;&#x5C6C;&#x6027;&#x6E2C;&#x8A66;&#xFF09;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x6E2C;&#x8A66;&#xFF08;&#x5404;&#x7A2E;&#x5B57;&#x7B26;&#x4E32;&#x5C6C;&#x6027;&#x6E2C;&#x8A66;&#xFF09;&#x3001;&#x6587;&#x4EF6;&#x6E2C;&#x8A66;&#xFF08;&#x5404;&#x7A2E;&#x6587;&#x4EF6;&#x5C6C;&#x6027;&#x6E2C;&#x8A66;&#xFF09;&#xFF0C;&#x6211;&#x5011;&#x901A;&#x904E;&#x5224;&#x65B7;&#x5C0D;&#x61C9;&#x7684;&#x6E2C;&#x8A66;&#x662F;&#x5426;&#x6210;&#x529F;&#xFF0C;&#x5F9E;&#x800C;&#x5B8C;&#x6210;&#x5404;&#x7A2E;&#x5E38;&#x898F;&#x5DE5;&#x4F5C;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x5404;&#x7A2E;&#x6E2C;&#x8A66;&#x7684;&#x908F;&#x8F2F;&#x7D44;&#x5408;&#x5F8C;&#xFF0C;&#x5C07;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x66F4;&#x5FA9;&#x96DC;&#x7684;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p><span id="toc_17877_9500_12"></span></p>
+<h3 id="%E6%A2%9D%E4%BB%B6%E6%B8%AC%E8%A9%A6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">&#x689D;&#x4EF6;&#x6E2C;&#x8A66;&#x57FA;&#x672C;&#x4F7F;&#x7528;</h3>
+<p><span id="toc_17877_9500_13"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E6%95%B8%E5%80%BC%E6%B8%AC%E8%A9%A6">&#x7BC4;&#x4F8B;&#xFF1A;&#x6578;&#x503C;&#x6E2C;&#x8A66;</h4>
+<pre><code>$ if test 5 -eq 5;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if test 5 -ne 5;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p><span id="toc_17877_9500_14"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%B8%AC%E8%A9%A6">&#x7BC4;&#x4F8B;&#xFF1A;&#x5B57;&#x7B26;&#x4E32;&#x6E2C;&#x8A66;</h4>
+<pre><code>$ if test -n &quot;not empty&quot;;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if test -z &quot;not empty&quot;;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+$ if test -z &quot;&quot;;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if test -n &quot;&quot;;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p><span id="toc_17877_9500_15"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E6%96%87%E4%BB%B6%E6%B8%AC%E8%A9%A6">&#x7BC4;&#x4F8B;&#xFF1A;&#x6587;&#x4EF6;&#x6E2C;&#x8A66;</h4>
+<pre><code>$ if test -f /boot/System.map; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if test -d /boot/System.map; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p><span id="toc_17877_9500_16"></span></p>
+<h3 id="%E5%90%84%E7%A8%AE%E9%82%8F%E8%BC%AF%E6%B8%AC%E8%A9%A6%E7%9A%84%E7%B5%84%E5%90%88">&#x5404;&#x7A2E;&#x908F;&#x8F2F;&#x6E2C;&#x8A66;&#x7684;&#x7D44;&#x5408;</h3>
+<p><span id="toc_17877_9500_17"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E5%A6%82%E6%9E%9C-a%EF%BC%8Cb%EF%BC%8Cc-%E9%83%BD%E7%AD%89%E6%96%BC%E4%B8%8B%E9%9D%A2%E5%B0%8D%E6%87%89%E7%9A%84%E5%80%BC%EF%BC%8C%E9%82%A3%E9%BA%BC%E6%89%93%E5%8D%B0-yes%EF%BC%8C%E9%80%9A%E9%81%8E-a-%E9%80%B2%E8%A1%8C-%E8%88%87-%E6%B8%AC%E8%A9%A6">&#x7BC4;&#x4F8B;&#xFF1A;&#x5982;&#x679C; a&#xFF0C;b&#xFF0C;c &#x90FD;&#x7B49;&#x65BC;&#x4E0B;&#x9762;&#x5C0D;&#x61C9;&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x9EBC;&#x6253;&#x5370; YES&#xFF0C;&#x901A;&#x904E; -a &#x9032;&#x884C;&quot;&#x8207;&quot;&#x6E2C;&#x8A66;</h4>
+<pre><code>$ a=5;b=4;c=6;
+$ if test $a -eq 5 -a $b -eq 4 -a $c -eq 6; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+</code></pre><p><span id="toc_17877_9500_18"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E6%B8%AC%E8%A9%A6%E6%9F%90%E5%80%8B%E2%80%9C%E6%9D%B1%E8%A5%BF%E2%80%9D%E6%98%AF%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E9%8C%84%EF%BC%8C%E9%80%9A%E9%81%8E-o-%E9%80%B2%E8%A1%8C%E2%80%9C%E6%88%96%E2%80%9D%E9%81%8B%E7%AE%97">&#x7BC4;&#x4F8B;&#xFF1A;&#x6E2C;&#x8A66;&#x67D0;&#x500B;&#x201C;&#x6771;&#x897F;&#x201D;&#x662F;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x9304;&#xFF0C;&#x901A;&#x904E; -o &#x9032;&#x884C;&#x201C;&#x6216;&#x201D;&#x904B;&#x7B97;</h4>
+<pre><code>$ if test -f /etc/profile -o -d /etc/profile;then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+</code></pre><p><span id="toc_17877_9500_19"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E6%B8%AC%E8%A9%A6%E6%9F%90%E5%80%8B%E2%80%9C%E6%9D%B1%E8%A5%BF%E2%80%9D%E6%98%AF%E5%90%A6%E7%82%BA%E6%96%87%E4%BB%B6%EF%BC%8C%E6%B8%AC%E8%A9%A6-%E9%9D%9E%E9%81%8B%E7%AE%97">&#x7BC4;&#x4F8B;&#xFF1A;&#x6E2C;&#x8A66;&#x67D0;&#x500B;&#x201C;&#x6771;&#x897F;&#x201D;&#x662F;&#x5426;&#x70BA;&#x6587;&#x4EF6;&#xFF0C;&#x6E2C;&#x8A66; <code>!</code> &#x975E;&#x904B;&#x7B97;</h4>
+<pre><code>$ if test ! -f /etc/profile; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre><p>&#x4E0A;&#x9762;&#x50C5;&#x50C5;&#x6F14;&#x793A;&#x4E86; <code>test</code> &#x547D;&#x4EE4;&#x4E00;&#x4E9B;&#x975E;&#x5E38;&#x7C21;&#x55AE;&#x7684;&#x6E2C;&#x8A66;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x904E; <code>help test</code> &#x7372;&#x53D6; <code>test</code> &#x7684;&#x66F4;&#x591A;&#x7528;&#x6CD5;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<code>test</code> &#x547D;&#x4EE4;&#x5167;&#x90E8;&#x7684;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x548C; Shell &#x7684;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x7B26;&#x6709;&#x4E00;&#x4E9B;&#x5340;&#x5225;&#xFF0C;&#x5C0D;&#x61C9;&#x7684;&#x70BA; <code>-a</code> &#x548C; <code>&amp;&amp;</code>&#xFF0C;<code>-o</code> &#x8207; <code>||</code>&#xFF0C;&#x9019;&#x5169;&#x8005;&#x4E0D;&#x80FD;&#x6DF7;&#x6DC6;&#x4F7F;&#x7528;&#x3002;&#x800C;&#x975E;&#x904B;&#x7B97;&#x90FD;&#x662F; <code>!</code>&#xFF0C;&#x4E0B;&#x9762;&#x5C0D;&#x5B83;&#x5011;&#x9032;&#x884C;&#x6BD4;&#x8F03;&#x3002;</p>
+<p><span id="toc_17877_9500_20"></span></p>
+<h3 id="%E6%AF%94%E8%BC%83-a-%E8%88%87-o-%E8%88%87-%EF%BC%8C-test-%E8%88%87-test">&#x6BD4;&#x8F03; -a &#x8207; &amp;&amp;, -o &#x8207; ||&#xFF0C; ! test &#x8207; test !</h3>
+<p><span id="toc_17877_9500_21"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E8%A6%81%E6%B1%82%E6%9F%90%E6%96%87%E4%BB%B6%E5%8F%AF%E5%9F%B7%E8%A1%8C%E4%B8%94%E6%9C%89%E5%85%A7%E5%AE%B9%EF%BC%8C%E7%94%A8-a-%E5%92%8C-%E5%88%86%E5%88%A5%E5%AF%A6%E7%8F%BE">&#x7BC4;&#x4F8B;&#xFF1A;&#x8981;&#x6C42;&#x67D0;&#x6587;&#x4EF6;&#x53EF;&#x57F7;&#x884C;&#x4E14;&#x6709;&#x5167;&#x5BB9;&#xFF0C;&#x7528; -a &#x548C; &amp;&amp; &#x5206;&#x5225;&#x5BE6;&#x73FE;</h4>
+<pre><code>$ cat &gt; test.sh
+#!/bin/bash
+echo &quot;test&quot;
+[CTRL+D]  # &#x6309;&#x4E0B;&#x7D44;&#x5408;&#x9375;CTRL&#x8207;D&#x7D50;&#x675F;cat&#x8F38;&#x5165;&#xFF0C;&#x5F8C;&#x540C;&#xFF0C;&#x4E0D;&#x518D;&#x8A3B;&#x660E;
+$ chmod +x test.sh
+$ if test -s test.sh -a -x test.sh; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if test -s test.sh &amp;&amp; test -x test.sh; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+</code></pre><p><span id="toc_17877_9500_22"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E8%A6%81%E6%B1%82%E6%9F%90%E5%80%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A6%81%E9%BA%BC%E7%82%BA%E7%A9%BA%EF%BC%8C%E8%A6%81%E9%BA%BC%E5%92%8C%E6%9F%90%E5%80%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E7%AD%89">&#x7BC4;&#x4F8B;&#xFF1A;&#x8981;&#x6C42;&#x67D0;&#x500B;&#x5B57;&#x7B26;&#x4E32;&#x8981;&#x9EBC;&#x70BA;&#x7A7A;&#xFF0C;&#x8981;&#x9EBC;&#x548C;&#x67D0;&#x500B;&#x5B57;&#x7B26;&#x4E32;&#x76F8;&#x7B49;</h4>
+<pre><code>$ str1=&quot;test&quot;
+$ str2=&quot;test&quot;
+$ if test -z &quot;$str2&quot; -o &quot;$str2&quot; == &quot;$str1&quot;; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if test -z &quot;$str2&quot; || test &quot;$str2&quot; == &quot;$str1&quot;; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+</code></pre><p><span id="toc_17877_9500_23"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E6%B8%AC%E8%A9%A6%E6%9F%90%E5%80%8B%E6%95%B8%E5%AD%97%E4%B8%8D%E6%BB%BF%E8%B6%B3%E6%8C%87%E5%AE%9A%E7%9A%84%E6%89%80%E6%9C%89%E6%A2%9D%E4%BB%B6">&#x7BC4;&#x4F8B;&#xFF1A;&#x6E2C;&#x8A66;&#x67D0;&#x500B;&#x6578;&#x5B57;&#x4E0D;&#x6EFF;&#x8DB3;&#x6307;&#x5B9A;&#x7684;&#x6240;&#x6709;&#x689D;&#x4EF6;</h4>
+<pre><code>$ i=5
+$ if test ! $i -lt 5 -a $i -ne 6; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if ! test $i -lt 5 -a $i -eq 6; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+</code></pre><p>&#x5F88;&#x5BB9;&#x6613;&#x627E;&#x51FA;&#x5B83;&#x5011;&#x7684;&#x5340;&#x5225;&#xFF0C;<code>-a</code> &#x548C; <code>-o</code> &#x4F5C;&#x70BA;&#x6E2C;&#x8A66;&#x547D;&#x4EE4;&#x7684;&#x53C3;&#x6578;&#x7528;&#x5728;&#x6E2C;&#x8A66;&#x547D;&#x4EE4;&#x7684;&#x5167;&#x90E8;&#xFF0C;&#x800C; <code>&amp;&amp;</code> &#x548C; <code>||</code> &#x5247;&#x7528;&#x4F86;&#x904B;&#x7B97;&#x6E2C;&#x8A66;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;<code>!</code> &#x70BA;&#x5169;&#x8005;&#x901A;&#x7528;&#x3002;&#x9700;&#x8981;&#x95DC;&#x6CE8;&#x7684;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x6709;&#x6642;&#x53EF;&#x4EE5;&#x4E0D;&#x7528; <code>!</code> &#x904B;&#x7B97;&#x7B26;&#xFF0C;&#x6BD4;&#x5982; <code>-eq</code> &#x548C; <code>-ne</code> &#x525B;&#x597D;&#x76F8;&#x53CD;&#xFF0C;&#x53EF;&#x7528;&#x65BC;&#x6E2C;&#x8A66;&#x5169;&#x500B;&#x6578;&#x503C;&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF1B; <code>-z</code> &#x8207; <code>-n</code> &#x4E5F;&#x662F;&#x5C0D;&#x61C9;&#x7684;&#xFF0C;&#x7528;&#x4F86;&#x6E2C;&#x8A66;&#x67D0;&#x500B;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x70BA;&#x7A7A;</li>
+<li>&#x5728; <code>Bash</code> &#x88E1;&#xFF0C;<code>test</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7528;[] &#x904B;&#x7B97;&#x7B26;&#x53D6;&#x4EE3;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;[<code>&#x4E4B;&#x5F8C;&#x8207;</code>] &#x4E4B;&#x524D;&#x9700;&#x8981;&#x52A0;&#x4E0A;&#x984D;&#x5916;&#x7684;&#x7A7A;&#x683C;</li>
+<li>&#x5728;&#x6E2C;&#x8A66;&#x5B57;&#x7B26;&#x4E32;&#x6642;&#xFF0C;&#x6240;&#x6709;&#x8B8A;&#x91CF;&#x5EFA;&#x8B70;&#x7528;&#x96D9;&#x5F15;&#x865F;&#x5305;&#x542B;&#x8D77;&#x4F86;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x8B8A;&#x91CF;&#x5167;&#x5BB9;&#x70BA;&#x7A7A;&#x6642;&#x51FA;&#x73FE;&#x50C5;&#x6709;&#x6E2C;&#x8A66;&#x53C3;&#x6578;&#xFF0C;&#x6C92;&#x6709;&#x6E2C;&#x8A66;&#x5167;&#x5BB9;&#x7684;&#x60C5;&#x6CC1;</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x6211;&#x5011;&#x7528;&#x5BE6;&#x4F8B;&#x4F86;&#x6F14;&#x793A;&#x4E0A;&#x9762;&#x4E09;&#x500B;&#x6CE8;&#x610F;&#x4E8B;&#x9805;&#xFF1A;</p>
+<ul>
+<li><p><code>-ne</code> &#x548C; <code>-eq</code> &#x5C0D;&#x61C9;&#x7684;&#xFF0C;&#x6211;&#x5011;&#x6709;&#x6642;&#x5019;&#x53EF;&#x4EE5;&#x514D;&#x53BB; <code>!</code> &#x904B;&#x7B97;</p>
+<pre><code>$ i=5
+$ if test $i -eq 5; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if test $i -ne 5; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+$ if test ! $i -eq 5; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre></li>
+<li><p>&#x7528; <code>[ ]</code> &#x53EF;&#x4EE5;&#x53D6;&#x4EE3; <code>test</code>&#xFF0C;&#x9019;&#x6A23;&#x770B;&#x4E0A;&#x53BB;&#x6703;&#x201C;&#x7F8E;&#x89C0;&#x201D;&#x5F88;&#x591A;</p>
+<pre><code>$ if [ $i -eq 5 ]; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+$ if [ $i -gt 4 ] &amp;&amp; [ $i -lt 6 ]; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+YES
+</code></pre></li>
+<li><p>&#x8A18;&#x5F97;&#x7D66;&#x4E00;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x8B8A;&#x91CF;&#x52A0;&#x4E0A; <code>&quot;&quot;</code>&#xFF0C;&#x8A18;&#x5F97; <code>[</code> &#x4E4B;&#x5F8C;&#x8207; <code>]</code> &#x4E4B;&#x524D;&#x591A;&#x52A0;&#x4E00;&#x500B;&#x7A7A;&#x683C;</p>
+<pre><code>$ str=&quot;&quot;
+$ if [ &quot;$str&quot; = &quot;test&quot;]; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+-bash: [: missing `]&apos;
+NO
+$ if [ $str = &quot;test&quot; ]; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+-bash: [: =: unary operator expected
+NO
+$ if [ &quot;$str&quot; = &quot;test&quot; ]; then echo &quot;YES&quot;; else echo &quot;NO&quot;; fi
+NO
+</code></pre></li>
+</ul>
+<p>&#x5230;&#x9019;&#x88E1;&#xFF0C;<strong>&#x689D;&#x4EF6;&#x6E2C;&#x8A66;</strong>&#x5C31;&#x4ECB;&#x7D39;&#x5B8C;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x4ECB;&#x7D39;<strong>&#x547D;&#x4EE4;&#x5217;&#x8868;</strong>&#xFF0C;&#x5BE6;&#x969B;&#x4E0A;&#x5728;&#x4E0A;&#x9762;&#x6211;&#x5011;&#x5DF2;&#x7D93;&#x4F7F;&#x7528;&#x904E;&#x4E86;&#xFF0C;&#x5373;&#x591A;&#x500B;test&#x547D;&#x4EE4;&#x7684;&#x7D44;&#x5408;&#xFF0C;&#x901A;&#x904E; <code>&amp;&amp;</code>&#xFF0C;<code>||</code> &#x548C; <code>!</code> &#x7D44;&#x5408;&#x8D77;&#x4F86;&#x7684;&#x547D;&#x4EE4;&#x5E8F;&#x5217;&#x3002;&#x9019;&#x7A2E;&#x547D;&#x4EE4;&#x5E8F;&#x5217;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x66FF;&#x63DB; <code>if/then</code> &#x7684;&#x689D;&#x4EF6;&#x5206;&#x652F;&#x7D50;&#x69CB;&#x3002;&#x9019;&#x4E0D;&#x96E3;&#x60F3;&#x5230;&#x6211;&#x5011;&#x5728; C &#x8A9E;&#x8A00;&#x7A0B;&#x5E8F;&#x8A2D;&#x8A08;&#x4E2D;&#x7D93;&#x5E38;&#x505A;&#x7684;&#x5982;&#x4E0B;&#x7684;&#x9078;&#x64C7;&#x984C;&#xFF08;&#x5F88;&#x7121;&#x804A;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x610F;&#x7FA9;&#xFF09;&#xFF1A;&#x4E0B;&#x9762;&#x662F;&#x5426;&#x6703;&#x6253;&#x5370; <code>j</code>&#xFF0C;&#x5982;&#x679C;&#x6253;&#x5370;&#xFF0C;&#x5C07;&#x6253;&#x5370;&#x4EC0;&#x9EBC;&#xFF1F;</p>
+<pre><code>#include &lt;stdio.h&gt;
+int main()
+{
+    int i, j;
+
+    i=5;j=1;
+    if ((i==5) &amp;&amp; (j=5))  printf(&quot;%d\n&quot;, j);
+
+    return 0;
+}
+</code></pre><p>&#x5F88;&#x5BB9;&#x6613;&#x77E5;&#x9053;&#x5C07;&#x6253;&#x5370;&#x6578;&#x5B57; 5&#xFF0C;&#x56E0;&#x70BA; <code>i==5</code> &#x9019;&#x500B;&#x689D;&#x4EF6;&#x6210;&#x7ACB;&#xFF0C;&#x800C;&#x4E14;&#x96A8;&#x5F8C;&#x662F; <code>&amp;&amp;</code>&#xFF0C;&#x8981;&#x5224;&#x65B7;&#x6574;&#x500B;&#x689D;&#x4EF6;&#x662F;&#x5426;&#x6210;&#x7ACB;&#xFF0C;&#x6211;&#x5011;&#x5F97;&#x9032;&#x884C;&#x5F8C;&#x9762;&#x7684;&#x5224;&#x65B7;&#xFF0C;&#x53EF;&#x662F;&#x9019;&#x500B;&#x5224;&#x65B7;&#x4E26;&#x975E;&#x5E38;&#x898F;&#x7684;&#x5224;&#x65B7;&#xFF0C;&#x800C;&#x662F;&#x5148;&#x628A; <code>j</code> &#x4FEE;&#x6539;&#x70BA; 5&#xFF0C;&#x518D;&#x8F49;&#x63DB;&#x70BA;&#x771F;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x689D;&#x4EF6;&#x70BA;&#x771F;&#xFF0C;&#x6253;&#x5370;&#x51FA; 5 &#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9019;&#x53E5;&#x53EF;&#x4EE5;&#x89E3;&#x91CB;&#x70BA;&#xFF1A;&#x5982;&#x679C; <code>i</code> &#x7B49;&#x65BC; 5&#xFF0C;&#x90A3;&#x9EBC;&#x628A; <code>j</code> &#x8CE6;&#x503C;&#x70BA; 5&#xFF0C;&#x5982;&#x679C; <code>j</code> &#x5927;&#x65BC; 1 &#xFF08;&#x56E0;&#x70BA;&#x4E4B;&#x524D;&#x5DF2;&#x7D93;&#x70BA;&#x771F;&#xFF09;&#xFF0C;&#x90A3;&#x9EBC;&#x6253;&#x5370;&#x51FA; <code>j</code> &#x7684;&#x503C;&#x3002;&#x9019;&#x6A23;&#x7528; <code>&amp;&amp;</code> &#x9023;&#x7D50;&#x8D77;&#x4F86;&#x7684;&#x5224;&#x65B7;&#x8A9E;&#x53E5;&#x66FF;&#x4EE3;&#x4E86;&#x5169;&#x500B; <code>if</code> &#x689D;&#x4EF6;&#x5206;&#x652F;&#x8A9E;&#x53E5;&#x3002;</p>
+<p>&#x6B63;&#x662F;&#x57FA;&#x65BC;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x7279;&#x6709;&#x7684;&#x6027;&#x8CEA;&#xFF0C;&#x6211;&#x5011;&#x53EF;&#x4EE5;&#x901A;&#x904E; <code>&amp;&amp;</code>&#xFF0C;<code>||</code> &#x4F86;&#x53D6;&#x4EE3; <code>if/then</code> &#x7B49;&#x689D;&#x4EF6;&#x5206;&#x652F;&#x7D50;&#x69CB;&#xFF0C;&#x9019;&#x6A23;&#x5C31;&#x7522;&#x751F;&#x4E86;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x3002;</p>
+<p><span id="toc_17877_9500_24"></span></p>
+<h2 id="%E5%91%BD%E4%BB%A4%E5%88%97%E8%A1%A8">&#x547D;&#x4EE4;&#x5217;&#x8868;</h2>
+<p><span id="toc_17877_9500_25"></span></p>
+<h3 id="%E5%91%BD%E4%BB%A4%E5%88%97%E8%A1%A8%E7%9A%84%E5%9F%B7%E8%A1%8C%E8%A6%8F%E5%BE%8B">&#x547D;&#x4EE4;&#x5217;&#x8868;&#x7684;&#x57F7;&#x884C;&#x898F;&#x5F8B;</h3>
+<p>&#x547D;&#x4EE4;&#x5217;&#x8868;&#x7684;&#x57F7;&#x884C;&#x898F;&#x5F8B;&#x7B26;&#x5408;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#x7684;&#x904B;&#x7B97;&#x898F;&#x5F8B;&#xFF0C;&#x7528; <code>&amp;&amp;</code> &#x9023;&#x63A5;&#x8D77;&#x4F86;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#x679C;&#x524D;&#x8005;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#xFF0C;&#x5C07;&#x57F7;&#x884C;&#x5F8C;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x53CD;&#x4E4B;&#x4E0D;&#x7136;&#xFF1B;&#x7528; <code>||</code> &#x9023;&#x63A5;&#x8D77;&#x4F86;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#x679C;&#x524D;&#x8005;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#xFF0C;&#x5C07;&#x4E0D;&#x57F7;&#x884C;&#x5F8C;&#x7E8C;&#x547D;&#x4EE4;&#xFF0C;&#x53CD;&#x4E4B;&#x4E0D;&#x7136;&#x3002;</p>
+<p><span id="toc_17877_9500_26"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E5%A6%82%E6%9E%9C-ping-%E9%80%9A-www-lzu-edu-cn%EF%BC%8C%E9%82%A3%E9%BA%BC%E6%89%93%E5%8D%B0%E9%80%A3%E9%80%9A%E4%BF%A1%E6%81%AF">&#x7BC4;&#x4F8B;&#xFF1A;&#x5982;&#x679C; ping &#x901A; www.lzu.edu.cn&#xFF0C;&#x90A3;&#x9EBC;&#x6253;&#x5370;&#x9023;&#x901A;&#x4FE1;&#x606F;</h4>
+<pre><code>$ ping -c 1 www.lzu.edu.cn -W 1 &amp;&amp; echo &quot;=======connected=======&quot;
+</code></pre><p>&#x975E;&#x5E38;&#x6709;&#x8DA3;&#x7684;&#x554F;&#x984C;&#x51FA;&#x4F86;&#x4E86;&#xFF0C;&#x5373;&#x6211;&#x5011;&#x4E0A;&#x9762;&#x5DF2;&#x7D93;&#x63D0;&#x5230;&#x7684;&#xFF1A;&#x70BA;&#x4EC0;&#x9EBC;&#x8981;&#x8B93; C &#x7A0B;&#x5E8F;&#x5728; <code>main()</code> &#x51FD;&#x6578;&#x7684;&#x6700;&#x5F8C;&#x8FD4;&#x56DE; 0 &#xFF1F;&#x5982;&#x679C;&#x4E0D;&#x9019;&#x6A23;&#xFF0C;&#x628A;&#x9019;&#x7A2E;&#x7A0B;&#x5E8F;&#x653E;&#x5165;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x6703;&#x6709;&#x4EC0;&#x9EBC;&#x6A23;&#x7684;&#x7D50;&#x679C;&#xFF1F;&#x4F60;&#x81EA;&#x5DF1;&#x5BEB;&#x500B;&#x7C21;&#x55AE;&#x7684; C &#x7A0B;&#x5E8F;&#xFF0C;&#x7136;&#x5F8C;&#x653E;&#x5165;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x770B;&#x770B;&#x3002;</p>
+<p><span id="toc_17877_9500_27"></span></p>
+<h3 id="%E5%91%BD%E4%BB%A4%E5%88%97%E8%A1%A8%E7%9A%84%E4%BD%9C%E7%94%A8">&#x547D;&#x4EE4;&#x5217;&#x8868;&#x7684;&#x4F5C;&#x7528;</h3>
+<p>&#x6709;&#x6642;&#x7528;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x53D6;&#x4EE3; <code>if/then</code> &#x7B49;&#x689D;&#x4EF6;&#x5206;&#x652F;&#x7D50;&#x69CB;&#x53EF;&#x4EE5;&#x7701;&#x6389;&#x4E00;&#x4E9B;&#x4EE3;&#x78BC;&#xFF0C;&#x800C;&#x4E14;&#x4F7F;&#x5F97;&#x7A0B;&#x5E8F;&#x6BD4;&#x8F03;&#x7F8E;&#x89C0;&#x3001;&#x6613;&#x8B80;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<p><span id="toc_17877_9500_28"></span></p>
+<h4 id="%E7%AF%84%E4%BE%8B%EF%BC%9A%E5%9C%A8%E8%85%B3%E6%9C%AC%E9%87%8C%E5%88%A4%E6%96%B7%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8F%83%E6%95%B8%E5%80%8B%E6%95%B8%EF%BC%8C%E5%92%8C%E5%8F%83%E6%95%B8%E9%A1%9E%E5%9E%8B">&#x7BC4;&#x4F8B;&#xFF1A;&#x5728;&#x8173;&#x672C;&#x91CC;&#x5224;&#x65B7;&#x7A0B;&#x5E8F;&#x7684;&#x53C3;&#x6578;&#x500B;&#x6578;&#xFF0C;&#x548C;&#x53C3;&#x6578;&#x985E;&#x578B;</h4>
+<pre><code>#!/bin/bash
+
+echo $#
+echo $1
+if [ $# -eq 1 ] &amp;&amp; (echo $1 | grep ^[0-9]*$ &gt;/dev/null);then
+    echo &quot;YES&quot;
+fi
+</code></pre><p>&#x8AAA;&#x660E;&#xFF1A;&#x4E0A;&#x4F8B;&#x8981;&#x6C42;&#x53C3;&#x6578;&#x500B;&#x6578;&#x70BA; 1 &#x4E26;&#x4E14;&#x985E;&#x578B;&#x70BA;&#x6578;&#x5B57;&#x3002;</p>
+<p>&#x518D;&#x52A0;&#x4E0A; <code>exit 1</code>&#xFF0C;&#x6211;&#x5011;&#x5C07;&#x7701;&#x6389; <code>if/then</code> &#x7D50;&#x69CB;</p>
+<pre><code>#!/bin/bash
+
+echo $#
+echo $1
+! ([ $# -eq 1 ] &amp;&amp; (echo $1 | grep ^[0-9]*$ &gt;/dev/null)) &amp;&amp; exit 1
+
+echo &quot;YES&quot;
+</code></pre><p>&#x9019;&#x6A23;&#x8655;&#x7406;&#x5F8C;&#xFF0C;&#x5C0D;&#x7A0B;&#x5E8F;&#x53C3;&#x6578;&#x7684;&#x5224;&#x65B7;&#x50C5;&#x50C5;&#x9700;&#x8981;&#x7C21;&#x55AE;&#x7684;&#x4E00;&#x884C;&#x4EE3;&#x78BC;&#xFF0C;&#x800C;&#x4E14;&#x8B8A;&#x5F97;&#x66F4;&#x7F8E;&#x89C0;&#x3002;</p>
+<p><span id="toc_17877_9500_29"></span></p>
+<h2 id="%E5%B0%8F%E7%B5%90">&#x5C0F;&#x7D50;</h2>
+<p>&#x9019;&#x4E00;&#x7BC0;&#x4ECB;&#x7D39;&#x4E86; Shell &#x7DE8;&#x7A0B;&#x4E2D;&#x7684;&#x908F;&#x8F2F;&#x904B;&#x7B97;&#xFF0C;&#x689D;&#x4EF6;&#x6E2C;&#x8A66;&#x548C;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../zh/chapters/01-chapter2.html" class="navigation navigation-prev " aria-label="Previous page: 數值運算"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../zh/chapters/01-chapter4.html" class="navigation navigation-next " aria-label="Next page: 字符串操作"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-google_code_prettify/google-code-prettify.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-google_code_prettify/plugin.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-collapsible-menu/plugin.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-maxiang/maxiang.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"tinylab"}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Shell 编程范例 -->
+</html>
